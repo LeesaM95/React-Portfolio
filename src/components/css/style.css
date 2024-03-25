@@ -1,0 +1,18 @@
+#root {
+  --mimi-pink: #EDCEDB;
+  --chestnut: #8B413B;
+  --old-rose: #CA8989;
+  --puce: #C98F96;
+  --colombia-blue: #C1E2F2;
+}
+
+footer {
+  height: 150px;
+  background-color: var(--puce);
+  width: 100%;
+}
+
+#gitHubIcon #linkedInIcon #twitterIcon {
+  align-self: center;
+  margin: 10px;
+}

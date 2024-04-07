@@ -72,12 +72,12 @@ return (
         </div>
 
         <div class="mb-3">
-        <label for="inputEmail" class="form-label"></label>
+        <label for="inputEmail" class="form-label">Email</label>
         <input type="text" id="inputEmail" class="form-control"></input>
         </div>
 
         <div class="mb-3">
-        <label for="inputMessage" class="form-label"></label>
+        <label for="inputMessage" class="form-label">Message</label>
         <input type="text" id="inputmessage" class="form-control"></input>
         </div>
     </div>

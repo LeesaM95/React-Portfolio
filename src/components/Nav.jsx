@@ -1,25 +1,30 @@
 // Bringing in the required import from 'react-router-dom'
-import { Link } from 'react-router-dom';
-import Navbar from './UI/Navbar';
-
 export default function Nav() {
-  // The Navbar UI component will render each of the Link elements in the links prop
+  const linkStyle = {border: '1pc black', padding: '5px'};
+
   return (
-    <Navbar
-      links={[
-        <Link key={1} className="nav-link text-light" to="/About">
-          About Me
-        </Link>,
-        <Link key={2} className="nav-link text-light" to="/Contact">
-          Contact Me
-        </Link>,
-        <Link key={3} className="nav-link text-light" to="/Portfolio">
-        Portfolio
-      </Link>,
-      <Link key={4} className="nav-link text-light" to="/Resume">
-      Resume
-    </Link>,
-      ]}
-    />
+    <nav className="main-header-menu">
+      <section style={{
+        display: 'flex',
+        fontFamily: 'helvetica',
+        flexDirection: 'rows',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+      }}
+      >
+        <div style={linkStyle}>
+            <a href="/About">Home</a>
+        </div>
+        <div style={linkStyle}>
+            <a href="/Contact">Contact Me</a>
+        </div>
+        <div style={linkStyle}>
+            <a href="/Portfolio">Portfolio</a>
+        </div>
+        <div style={linkStyle}>
+            <a href="/Resume">Resume</a>
+        </div>
+      </section>
+    </nav>
   );
 }

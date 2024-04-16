@@ -1,5 +1,5 @@
 // Bringing in the required import from 'react-router-dom'
-export default function Nav() {
+ function Nav() {
   const linkStyle = {border: '1pc black', padding: '5px'};
 
   return (
@@ -28,3 +28,5 @@ export default function Nav() {
     </nav>
   );
 }
+
+module.exports = Nav;

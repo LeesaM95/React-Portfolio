@@ -1,6 +1,6 @@
 // Bringing in the required import from 'react-router-dom'
  function Nav() {
-  const linkStyle = {border: '1pc black', padding: '5px'};
+  const linkStyle = {style: 'none', padding: '5px'};
 
   return (
     <nav className="main-header-menu">
@@ -8,8 +8,10 @@
         display: 'flex',
         fontFamily: 'helvetica',
         flexDirection: 'rows',
-        alignItems: 'flex-start',
-        justifyContent: 'flex-start',
+        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
+        marginRight: '100px',
+        marginTop: '10px'
       }}
       >
         <div style={linkStyle}>
@@ -29,4 +31,4 @@
   );
 }
 
-module.exports = Nav;
+export default Nav;

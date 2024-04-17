@@ -6,7 +6,7 @@ const Header = (props) => {
     const {currentTab, handleTabChange} = props;
 
     return (
-        <header>
+        <header style={{height: 300, }}>
             <div>
                 <div>
                     <h1>Leesa Gonzalez's <span>Portfolio</span></h1>
@@ -20,4 +20,4 @@ const Header = (props) => {
     )
 }
 
-module.exports = Header;
+export default Header;

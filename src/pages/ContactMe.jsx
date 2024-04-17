@@ -1,80 +1,114 @@
-//Contact Page
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { validateEmail } from '../utils/helper';
 
-//import useState from React
-import { useState } from "react"
-
-//import validateEmail helper
-import { validateEmail } from '../utils/helper'
-
-//create a contact function
-function Contact() {
-    //create base variables for the form fields and set the initial values to empty strings
-    const [email, setEmail] = useState('')
-    const [name, setName] = useState('')
-    const [message, setMessage] = useState('')
-    const [error, setError] = useState('')
-
-    // set up an input change function that gets the value and name of each imput that triggered the change
+function ContactMe() {
+    const [email, setEmail] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [message, setMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleInputChange = (e) => {
         const { target } = e;
         const inputType = target.name;
         const inputValue = target.value;
 
-
-        // based on what's entered, we set the state of [email, name, message]
-
         if (inputType === 'email') {
-            setEmail(inputValue)
-        } else if (inputType === 'name') {
-            setName(inputValue)
+            setEmail(inputValue);
+        } else if (inputType === 'firstName') {
+            setFirstName(inputValue)
         } else {
             setMessage(inputValue)
-        };
-
-        // set up the form submission. 
-        const handleFormSubmission = (e) => {
-        // 1. prevent the default behavior of form submission (refreshing the page immediately)    
-            e.preventDefault();
-
-        // 2. verify if the email is valid and if the name section is empty. if YES, display an error message.
-            if(!validateEmail(email) || !name) {
-                setError("Name or Email invalid!");
-        // 3. make sure we exit out of this block of code if something's wrong so that it can be corrected.
-                return;
-        
-            }
-        // 3b. check to see if the message is invalid. if YES, send error message
-            if(!setMessage(message)) {
-                setError("Section cannot be empty!");
-                return;
-            }
         }
-        // 4. If everything is valid, we want to make sure that the submit form is cleared after the previous form was filled out
-            setName('');
-            setEmail('');
-            setMessage('')
         
-    };
-};
+    }
 
-// set up html section and styling
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
 
-return (
-    <div class="container">
-        <div class="mb-3">
-        <label for="inputName" class="form-label">Name</label>
-        <input type="text" id="inputName" class="form-control"></input>
+        if (!validateEmail(email) || !firstName) {
+            setErrorMessage("Email or Name is invalid!");
+
+            return;
+        }
+
+        if (!setMessage(message)) {
+            setErrorMessage("Message cannot be left blank!");
+            return
+        }
+    }
+
+    setEmail("");
+    setFirstName("");
+    setMessage("");
+
+    return (
+        <div>
+            <div>
+                <h2>Contact Me!</h2>
+            </div>
+            <div>
+                <div>
+                    <h3>Like What I Do?</h3>
+                    <p>Contact Me!</p>
+                </div>
+                <address>
+                    Homestead, PA <br />
+                    Text: <a href="tel: 206-295-4256">206.295.4256</a>
+                    <br />
+                    Email: {" "}
+                    <a href="mailto://leesamarie95@gmail.com">leesamarie95@gmail.com</a>
+                </address>
+                <p>I'm eager to hear your feedback!</p>
+            </div>
+
+            <div>
+                <Form>
+                    <Form.Group className="mb-3" controlId="contact-name">
+                       <Form.Label for="contact-name">First Name</Form.Label>
+                    <Form.Control
+                    value={firstName}
+                    name="firstName"
+                    onChange={handleInputChange}
+                    type="text"
+                    id="contact-name"
+                    placeholder="Your name" /> 
+                    </Form.Group>
+                    
+
+                    <Form.Label for="contact-email">Email</Form.Label>
+                    <Form.Control
+                    value={email}
+                    name="email"
+                    onChange={handleInputChange}
+                    type="email"
+                    id="contact-email"
+                    placeholder="Your email" />
+
+                    <Form.Label for="contact-message">Message</Form.Label>
+                    <Form.Control
+                    value={message}
+                    name="message"
+                    onChange={handleInputChange}
+                    type="message"
+                    id="contact-message"
+                    placeholder="Your message" />
+
+                    <Button
+                    type="button"
+                    onClick={handleFormSubmit}
+                    >
+                        Submit
+                    </Button>
+                </Form>
+                {errorMessage && (
+                    <div>
+                        <p>{errorMessage}</p>
+                    </div>
+                )}
+            </div>
         </div>
-
-        <div class="mb-3">
-        <label for="inputEmail" class="form-label">Email</label>
-        <input type="text" id="inputEmail" class="form-control"></input>
-        </div>
-
-        <div class="mb-3">
-        <label for="inputMessage" class="form-label">Message</label>
-        <input type="text" id="inputmessage" class="form-control"></input>
-        </div>
-    </div>
-)
+    )
+}
+export default ContactMe;

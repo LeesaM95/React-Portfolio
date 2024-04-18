@@ -1,7 +1,4 @@
-// About Me Page
-// Must Include:
-// recent photo/avatar of myself
-// short bio about myself
+
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -41,7 +38,7 @@ export default function About() {
                     <Col xs={6} md={6}>
                         <h2 style={titleStyle}>About Me</h2>
                         <hr style={{ marginLeft: 450, width: 450 }}></hr>
-                        <Image src="https://images2.imgbox.com/95/f2/jkPq8mhZ_o.jpg" style={imgStyle}></Image>
+                        <img src="https://images2.imgbox.com/95/f2/jkPq8mhZ_o.jpg" style={imgStyle}></img>
                     </Col>
 
 

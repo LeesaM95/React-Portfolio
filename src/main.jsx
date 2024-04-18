@@ -7,7 +7,7 @@ import Contact from './pages/ContactMe'
 import Portfolio from './pages/Portfolio'
 import Resume from './pages/Resume'
 import Error from './pages/Error'
-import Footer from './pages/Footer'
+
 
 // Define all accessible routes as well is which component responds to which URL
 
@@ -34,10 +34,6 @@ const router = createBrowserRouter([
                 path: '/Resume',
                 element: <Resume />
             },
-            {
-                path: '/Footer',
-                element: <Footer />
-            }
         ],
     },
 ]);

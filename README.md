@@ -10,7 +10,7 @@ Finally, if they find they like my work and what I can do, a user can send me a 
 ## Installation
 This application doesn't need anything to be downloaded onto a user's device. All you'll need is the link to the application. 
 
-The link to the deployed application can be found <a href="https://leesamarieportfolio.netlify.app/About">Here</a>
+The link to the deployed application can be found <a href="https://leesa-marie-portfolio.onrender.com/">Here</a>
 
 ## Visuals
 Here are some nifty screenshots of the site for your viewing pleasure. Beware: it is Very Pink.
